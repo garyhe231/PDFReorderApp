@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Reorder App</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <span style="font-size:1.4rem">📄</span>
+    <h1>PDF Reorder App</h1>
+    <span class="badge">Smart Sort</span>
+  </header>
+
+  <main>
+    <!-- Upload -->
+    <div id="upload-zone" class="upload-zone">
+      <div class="icon">📂</div>
+      <strong>Drop a PDF here or click to browse</strong>
+      <p>The app reads printed page numbers from each page and lets you reorder them by drag &amp; drop.</p>
+      <input type="file" id="file-input" accept=".pdf">
+    </div>
+
+    <!-- Status -->
+    <div id="status-bar"></div>
+
+    <!-- Controls -->
+    <div id="controls" style="display:none">
+      <span class="info-chip" id="filename-label">—</span>
+      <span class="info-chip"><strong id="total-pages">0</strong> pages</span>
+      <span class="info-chip"><strong id="detected-count">0</strong> numbers detected</span>
+      <button class="btn btn-primary" id="auto-sort-btn">Auto-Sort by Page Number</button>
+      <button class="btn btn-ghost"   id="reset-btn">Reset Order</button>
+      <button class="btn btn-ghost"   id="new-file-btn">New File</button>
+    </div>
+
+    <!-- Auto-sort banner -->
+    <div id="auto-sort-banner"></div>
+
+    <hr class="section-divider" style="display:none" id="div1">
+
+    <!-- Pages grid -->
+    <div id="pages-section" style="display:none">
+      <h2>Page Order &nbsp;<span style="color:#475569;font-weight:400;text-transform:none;font-size:0.78rem">Drag cards to rearrange</span></h2>
+      <div id="pages-grid"></div>
+
+      <div style="margin-top:20px; text-align:right">
+        <button class="btn btn-success" id="reorder-btn">Apply &amp; Download</button>
+      </div>
+    </div>
+
+    <!-- Download section -->
+    <div id="download-section" style="display:none">
+      <h3>Your reordered PDF is ready!</h3>
+      <p>Click below to download the file with pages in the new order.</p>
+      <a id="download-btn" class="btn btn-success" href="#" download>⬇ Download Reordered PDF</a>
+    </div>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
